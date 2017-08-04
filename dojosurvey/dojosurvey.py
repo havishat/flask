@@ -5,7 +5,7 @@
 
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
-# our index route will handle rendering our form
+#index route will handle rendering our form
 @app.route('/')
 def index():
   return render_template("index.html")
@@ -13,8 +13,6 @@ def index():
 @app.route('/results', methods=['POST']) 
 def create_user():
     print "Got Post Info"
-    # we'll talk about the following two lines after we learn a little more
-    # about forms
     name = request.form['name']
     Dojo_location = request.form['Dojo Location']
     Favorite_Language = request.form['Favorite Language']
