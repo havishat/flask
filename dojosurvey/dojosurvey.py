@@ -1,8 +1,6 @@
 # Assignment: Dojo Survey
 # Build a flask application that accepts a form submission, redirects, and presents the submitted data on a results page.
 
-# The goal is to help you get familiar with sending POST requests through a form and displaying that information. Consider the below example as a guide.
-
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 #index route will handle rendering our form
