@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ninjagold</title>
+</head>
+<body>
+    <form action = '/process_money' method = 'post'>
+        Your Gold:<input type="text" value='{{total}}'>
+    <br>
+    </form>
+    <p>Farm<p>
+    <p>(earns 10-20 golds)</p>
+    <form action = '/process_money/farm' method = 'post'>
+        <input type="submit" value="Find Gold">
+    </form>
+    <p>Cave</p>
+    <p>(earns 5-10 golds)</p>
+    <form action = '/process_money/cave' method = 'post'>
+        <input type="submit" value="Find Gold">
+    </form>
+    <p>House</p>
+    <p>(earns 2-5 golds)</p>
+    <form action = '/process_money/house' method = 'post'>
+        <input type="submit" value="Find Gold">
+    </form>
+    <p>Casino</p>
+    <p>(earns 0-50 golds)</p>
+    <form action = '/process_money/casino' method = 'post'>
+        <input type="submit" value="Find Gold">
+    </form>
+    <p>Activities:</p>
+    <textarea>Earned {{ comment }} golds from the {{actions}}!</textarea>
+
+
+    <!--<input type="submit" value="Submit">-->
+</body>
+</html>

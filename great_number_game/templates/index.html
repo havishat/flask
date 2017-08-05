@@ -8,11 +8,20 @@
     <h1>Welcome to the Great Number Game!</h1>
     <p>I am thinking of a nubmer between 1 and 100</p>
     <p>Take a guess!</p>
-    {{ session['somekey'] }}
+    <!--{{ session['somekey'] }}-->
+    
     <form action = 'number' method = 'post'>
         <br>
-        <input type="text" name="number"><br>
+        <input type="text" name="number">
+        <br>
         <input type="submit" value="Submit">
     </form>
+    <p>{{ comment }}</p>
+    {% if play == "same" %}
+    <form>
+    <br>
+        <input type="submit" value="play again">
+    </form>
+    {% endif %}
 </body>
 </html>

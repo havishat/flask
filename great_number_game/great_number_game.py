@@ -12,13 +12,22 @@ app.secret_key = 'ThisIsSecret' # you need to set a secret key for security purp
 @app.route('/')
 
 def greatnumbergame():
-    random.randrange(0, 101) # random number between 0-100
-    # Set session like so:
-    # session['someKey'] = 50
+    session['someKey'] = random.randrange(0, 101) # random number between 0-100
+    print session['someKey']
     # Remove something from session like so:
     # session.pop('someKey')
+    return render_template('index.html')
+
 @app.route('/number', methods=['POST'])
-def create_user():
-    number = request.form['number']
-    return redirect('/') # redirects back to the '/' route
+def number():
+    session['number'] = request.form['number']
+    if int(session['number']) == int(session['someKey']) :
+        comment = int(session['someKey']), "was the number"
+        play = "same"
+    elif int(session['number'] ) < int(session['someKey']):
+        comment = "Too low"
+    elif int(session['number'] ) > int(session['someKey']):
+        comment = "Too High"
+    print session['number'] 
+    return render_template('index.html',comment=comment,play=play) 
 app.run(debug=True)
