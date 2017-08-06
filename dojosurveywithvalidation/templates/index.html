@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action='/results' method='post'>
+            Your Name: <input type='text' name='name'>
+            Dojo Location: <select name='Dojo Location'>
+                <option value="San Jose">San Jose</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+            Favorite Language: <select name='Favorite Language'>
+                 <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Mean">Mean</option>
+            </select>
+            Comment (optional): <input type='text' name='Comment'>
+            <button type="submit" name='Button'>Button</button>
+        </form>
+    </body>
+</html>

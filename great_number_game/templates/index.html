@@ -9,7 +9,13 @@
     <p>I am thinking of a nubmer between 1 and 100</p>
     <p>Take a guess!</p>
     <!--{{ session['somekey'] }}-->
-    
+    <!--{% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+    {% endwith %}-->
     <form action = 'number' method = 'post'>
         <br>
         <input type="text" name="number">

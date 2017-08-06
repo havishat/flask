@@ -1,0 +1,31 @@
+<html>
+    <head>
+       <title>Registration Form</title>
+       <style>
+           .flashes {
+               color: blue; 
+           }
+        </style>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form action='/results' method='post'>
+            Email:<input type="text" name="email">
+            First Name: <input type='text' name='First_name'>
+            Last Name: <input type='text' name='Last_name'>
+            Password: <input type='text' name='password'>
+            Confirm_password: <input type='text' name='confirm_password'>
+            Birthday:<input type="text" name="bday" value='dd/mm/yyyy'>
+            <button type="submit" name='Button'>Button</button>
+        </form>
+    </body>
+</html>
+            
